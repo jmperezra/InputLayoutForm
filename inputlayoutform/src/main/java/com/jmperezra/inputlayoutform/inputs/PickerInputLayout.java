@@ -7,10 +7,11 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.jmperezra.inputformlayout.R;
 import com.jmperezra.inputlayoutform.InputView;
+import com.jmperezra.inputlayoutform.R;
 
-public abstract class PickerInputLayout extends InputView<AppCompatTextView>{
+
+public abstract class PickerInputLayout extends InputView<AppCompatTextView> {
 
     private AppCompatTextView textView;
 

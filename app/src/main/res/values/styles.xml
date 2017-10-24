@@ -7,23 +7,4 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="InputView">
-        <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:textColorHint">@color/colorAccent</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
-    <style name="InputView.EditView">
-        <item name="android:paddingTop">13dp</item>
-        <item name="android:paddingBottom">13dp</item>
-    </style>
-
-    <style name="InputView.Picker" >
-        <item name="android:background">?attr/editTextBackground</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:textAppearance">?android:attr/textAppearanceMediumInverse</item>
-        <item name="android:drawableRight">@drawable/ic_arrow_drop_down_black_24dp</item>
-        <item name="android:drawableTintMode">@color/colorPrimaryDark</item>
-    </style>
-
 </resources>
