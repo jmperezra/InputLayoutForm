@@ -6,10 +6,11 @@ import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 
-import com.jmperezra.inputformlayout.R;
 import com.jmperezra.inputlayoutform.InputView;
+import com.jmperezra.inputlayoutform.R;
 
-public class EditLayout extends InputView<AppCompatEditText>{
+
+public class EditLayout extends InputView<AppCompatEditText> {
 
     private AppCompatEditText editText;
 

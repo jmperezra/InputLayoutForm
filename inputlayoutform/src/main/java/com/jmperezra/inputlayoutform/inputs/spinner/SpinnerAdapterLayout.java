@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.jmperezra.inputformlayout.R;
+import com.jmperezra.inputlayoutform.R;
 
 import java.util.ArrayList;
 import java.util.List;

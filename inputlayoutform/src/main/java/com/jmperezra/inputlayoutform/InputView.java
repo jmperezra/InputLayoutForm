@@ -18,8 +18,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.jmperezra.inputformlayout.R;
-
 public abstract class InputView<T extends TextView> extends LinearLayout implements InputLayoutView{
 
     private InputPresenter presenter;
