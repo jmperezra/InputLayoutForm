@@ -32,9 +32,9 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
 
     private AppCompatTextView viewLabel;
     private AppCompatTextView viewInfo;
-    private T viewInput;
 
-    protected abstract T createInputLayout();
+    protected abstract void attachInputLayout();
+    protected abstract T getViewInput();
 
     public InputView(Context context) {
         this(context, null);
@@ -56,8 +56,7 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
         setOrientation(VERTICAL);
         inflateView();
         findViews();
-        viewInput = createInputLayout();
-        viewWrapperInput.addView(viewInput);
+        attachInputLayout();
     }
 
     private void inflateView(){
@@ -140,9 +139,9 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     }
 
     private void setFocusAtEndOfText(){
-        int len = viewInput.getText().length();
-        if (viewInput instanceof EditText) {
-            ((EditText)viewInput).setSelection(len, len);
+        int len = getViewInput().getText().length();
+        if (getViewInput() instanceof EditText) {
+            ((EditText)getViewInput()).setSelection(len, len);
         }
     }
 
@@ -209,11 +208,11 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     }
 
     public void setIconRight(@DrawableRes int drawable){
-        viewInput.setCompoundDrawablesWithIntrinsicBounds(0, 0, drawable, 0);
+        getViewInput().setCompoundDrawablesWithIntrinsicBounds(0, 0, drawable, 0);
     }
 
     public void setIconLeft(@DrawableRes int drawable){
-        viewInput.setCompoundDrawablesWithIntrinsicBounds(drawable, 0, 0, 0);
+        getViewInput().setCompoundDrawablesWithIntrinsicBounds(drawable, 0, 0, 0);
     }
 
     private void tintIcon(@DrawableRes int icon, @ColorInt int color){
@@ -245,25 +244,25 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
 
     @Override
     public void setInputHint(CharSequence hint){
-        viewInput.setHint(hint);
+        getViewInput().setHint(hint);
     }
 
     public void setInputText(CharSequence text){
-        viewInput.setText(text);
+        getViewInput().setText(text);
         presenter.setInputText(text);
     }
 
     public void setInputTextSize(float textSize){
-        viewInput.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+        getViewInput().setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
     }
 
     public void setInputTextColor(@ColorInt int color){
-        viewInput.setTextColor(color);
+        getViewInput().setTextColor(color);
     }
 
     @Override
     public void setupFocusEvent(){
-        viewInput.setOnFocusChangeListener(this.getFocusChangeListener());
+        getViewInput().setOnFocusChangeListener(this.getFocusChangeListener());
     }
 
     private OnFocusChangeListener getFocusChangeListener(){
@@ -277,7 +276,7 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
 
     @Override
     public void setupTextChangedEvent(){
-        viewInput.addTextChangedListener(getTextWatcher());
+        getViewInput().addTextChangedListener(getTextWatcher());
     }
 
     private TextWatcher getTextWatcher(){

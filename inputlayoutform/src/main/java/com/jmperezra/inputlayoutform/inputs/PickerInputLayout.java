@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.jmperezra.inputlayoutform.InputView;
 import com.jmperezra.inputlayoutform.R;
@@ -41,8 +42,13 @@ public abstract class PickerInputLayout extends InputView<AppCompatTextView> {
     }
 
     @Override
-    public AppCompatTextView createInputLayout() {
-        textView = (AppCompatTextView) inflate(getContext(), R.layout.view_input_picker, null);
+    public void attachInputLayout() {
+        ViewGroup viewGroup = (ViewGroup) inflate(getContext(), R.layout.view_input_picker, viewWrapperInput);
+        textView = (AppCompatTextView) viewGroup.getChildAt(0);
+    }
+
+    @Override
+    protected AppCompatTextView getViewInput() {
         return textView;
     }
 
