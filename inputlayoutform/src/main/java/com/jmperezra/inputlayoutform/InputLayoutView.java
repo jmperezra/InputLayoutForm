@@ -3,8 +3,6 @@ package com.jmperezra.inputlayoutform;
 
 public interface InputLayoutView {
 
-    void setupView();
-    void inflateView();
     void obtainValues();
 
     void showInfoText();
@@ -15,9 +13,6 @@ public interface InputLayoutView {
     void setInputHint(CharSequence hint);
 
     void setupFocusEvent();
-    void addInputLayout();
 
     void setupTextChangedEvent();
-
-    abstract void buildInputLayout();
 }

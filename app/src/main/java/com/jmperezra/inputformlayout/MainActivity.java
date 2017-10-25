@@ -31,16 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void setup(){
         inputView = findViewById(R.id.input);
-        inputView.setLabelText(getString(R.string.app_name));
-        inputView.setLabelTextColor(R.color.colorAccent);
-        inputView.setInfoText(getString(R.string.app_name));
-        inputView.setInfoTextColor(R.color.colorPrimary);
+        //inputView.setLabelText(getString(R.string.app_name));
+        //inputView.setLabelTextColor(R.color.colorAccent);
+        //inputView.setInfoText(getString(R.string.app_name));
+        //inputView.setInfoTextColor(R.color.colorPrimary);
 
         pickerInputLayout = findViewById(R.id.pickerLayout);
-        pickerInputLayout.setLabelText(getString(R.string.app_name), true);
-        pickerInputLayout.setLabelTextColor(R.color.colorAccent);
-        pickerInputLayout.setInfoText(getString(R.string.app_name));
-        pickerInputLayout.setInfoTextColor(R.color.colorPrimary);
+        //pickerInputLayout.setLabelText(getString(R.string.app_name), true);
+        //pickerInputLayout.setLabelTextColor(R.color.colorAccent);
+        //pickerInputLayout.setInfoText(getString(R.string.app_name));
+        //pickerInputLayout.setInfoTextColor(R.color.colorPrimary);
 
         final List<ItemSpinnerLayout> items = new ArrayList<>();
         items.add(new AnimalsItemRow(1, "Tux"));

@@ -19,12 +19,8 @@ public class InputPresenter {
     }
 
     private void viewAttached(){
-        view.setupView();
-        view.inflateView();
         view.obtainValues();
         view.hideLabelText();
-        view.buildInputLayout();
-        view.addInputLayout();
         view.setupFocusEvent();
         view.setupTextChangedEvent();
     }

@@ -4,7 +4,6 @@ package com.jmperezra.inputlayoutform.inputs.edit;
 import android.content.Context;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 
 import com.jmperezra.inputlayoutform.InputView;
 import com.jmperezra.inputlayoutform.R;
@@ -24,8 +23,7 @@ public class EditLayout extends InputView<AppCompatEditText> {
 
     @Override
     public void buildInputLayout() {
-        LayoutInflater inflater = LayoutInflater.from(getContext());
-        editText = (AppCompatEditText) inflater.inflate(R.layout.view_input_edit, null, false);
+        editText = (AppCompatEditText) inflate(getContext(), R.layout.view_input_edit, null);
     }
 
     @Override
