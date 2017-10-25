@@ -22,12 +22,8 @@ public class EditLayout extends InputView<AppCompatEditText> {
     }
 
     @Override
-    public void buildInputLayout() {
+    public AppCompatEditText createInputLayout() {
         editText = (AppCompatEditText) inflate(getContext(), R.layout.view_input_edit, null);
-    }
-
-    @Override
-    public AppCompatEditText getInputView() {
         return editText;
     }
 

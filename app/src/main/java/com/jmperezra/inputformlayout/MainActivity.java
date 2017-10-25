@@ -51,11 +51,17 @@ public class MainActivity extends AppCompatActivity {
 
         pickerInputLayout.setItems(items);
         //pickerInputLayout.setItemPositionSelected(0);
-        pickerInputLayout.setItemSelected(items.get(2));
+        pickerInputLayout.setLabelText("Seleccione opción:", true);
+        //pickerInputLayout.setItemSelected(items.get(2));
         pickerInputLayout.setListener(new SpinnerLayout.SpinnerLayoutListener() {
             @Override
             public void onItemSelected(ItemSpinnerLayout itemSpinnerLayout) {
                 Log.d("@dev", "Item Seleccionado: " + itemSpinnerLayout.getLabel());
+            }
+
+            @Override
+            public void onItemDefaultSelected() {
+                //nothing
             }
         });
 

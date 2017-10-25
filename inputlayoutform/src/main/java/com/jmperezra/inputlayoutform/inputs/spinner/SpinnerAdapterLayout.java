@@ -3,7 +3,6 @@ package com.jmperezra.inputlayoutform.inputs.spinner;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -94,7 +93,6 @@ public class SpinnerAdapterLayout extends BaseAdapter {
     }
 
     private View inflateView(){
-        LayoutInflater inflater = LayoutInflater.from(context);
-        return inflater.inflate(R.layout.view_spinner_item, null, false);
+        return View.inflate(context, R.layout.view_spinner_item, null);
     }
 }

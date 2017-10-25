@@ -4,7 +4,6 @@ package com.jmperezra.inputlayoutform.inputs;
 import android.content.Context;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 
 import com.jmperezra.inputlayoutform.InputView;
@@ -13,7 +12,7 @@ import com.jmperezra.inputlayoutform.R;
 
 public abstract class PickerInputLayout extends InputView<AppCompatTextView> {
 
-    private AppCompatTextView textView;
+    protected AppCompatTextView textView;
 
     public PickerInputLayout(Context context) {
         this(context, null);
@@ -42,13 +41,8 @@ public abstract class PickerInputLayout extends InputView<AppCompatTextView> {
     }
 
     @Override
-    public void buildInputLayout() {
-        LayoutInflater inflater = LayoutInflater.from(getContext());
-        textView = (AppCompatTextView) inflater.inflate(R.layout.view_input_picker, null, false);
-    }
-
-    @Override
-    public AppCompatTextView getInputView() {
+    public AppCompatTextView createInputLayout() {
+        textView = (AppCompatTextView) inflate(getContext(), R.layout.view_input_picker, null);
         return textView;
     }
 

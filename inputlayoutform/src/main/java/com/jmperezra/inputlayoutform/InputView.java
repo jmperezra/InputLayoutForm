@@ -28,15 +28,13 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     private AttributeSet attrs;
 
     private ViewGroup layoutInflated;
-    private ViewGroup viewWrapperInput;
+    protected ViewGroup viewWrapperInput;
 
     private AppCompatTextView viewLabel;
     private AppCompatTextView viewInfo;
-    private TextView viewInput;
+    private T viewInput;
 
-    protected abstract void buildInputLayout();
-
-    public abstract T getInputView();
+    protected abstract T createInputLayout();
 
     public InputView(Context context) {
         this(context, null);
@@ -58,8 +56,8 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
         setOrientation(VERTICAL);
         inflateView();
         findViews();
-        buildInputLayout();
-        addInputLayout();
+        viewInput = createInputLayout();
+        viewWrapperInput.addView(viewInput);
     }
 
     private void inflateView(){
@@ -70,11 +68,6 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
         viewLabel = layoutInflated.findViewById(R.id.viewLabel);
         viewWrapperInput = layoutInflated.findViewById(R.id.wrapperInput);
         viewInfo = layoutInflated.findViewById(R.id.viewInfo);
-    }
-
-    private void addInputLayout(){
-        viewInput = getInputView();
-        viewWrapperInput.addView(viewInput);
     }
 
     private void setAttrsValues(){
@@ -147,9 +140,9 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     }
 
     private void setFocusAtEndOfText(){
-        int len = getInputView().getText().length();
+        int len = viewInput.getText().length();
         if (viewInput instanceof EditText) {
-            ((EditText)getInputView()).setSelection(len, len);
+            ((EditText)viewInput).setSelection(len, len);
         }
     }
 
