@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="InputLayoutStyleable">
-        <attr name="inputText" format="string" />
-        <attr name="inputTextColor" format="color" />
-        <attr name="inputTextSize" format="dimension" />
+        <attr name="inputLayoutText" format="string" />
+        <attr name="inputLayoutTextColor" format="color" />
+        <attr name="inputLayoutTextSize" format="dimension" />
 
         <attr name="inputLabelText" format="string" />
         <attr name="inputLabelTextColor" format="color" />
