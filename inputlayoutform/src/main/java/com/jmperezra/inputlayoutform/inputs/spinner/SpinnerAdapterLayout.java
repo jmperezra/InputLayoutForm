@@ -73,7 +73,7 @@ public class SpinnerAdapterLayout extends BaseAdapter {
         if (position == positionSelected){
             rootView.setSelected(true);
         }
-        rootView.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.bg_key));
+        rootView.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.input_layout_form_bg_key));
         setLabel(rootView, rowItem);
         return rootView;
     }
@@ -93,6 +93,6 @@ public class SpinnerAdapterLayout extends BaseAdapter {
     }
 
     private View inflateView(){
-        return View.inflate(context, R.layout.view_spinner_item, null);
+        return View.inflate(context, R.layout.view_input_layout_form_spinner_item, null);
     }
 }

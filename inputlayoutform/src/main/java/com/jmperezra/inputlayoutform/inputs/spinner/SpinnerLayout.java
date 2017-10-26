@@ -92,13 +92,19 @@ public class SpinnerLayout extends PickerInputLayout {
     @Override
     public void pickerClicked() {
         listPopupWindow.show();
-        listPopupWindow.getListView().setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.bg_key));
+        listPopupWindow.getListView().setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.input_layout_form_bg_key));
     }
 
     public void setLabelText(CharSequence text, boolean showLabelInList) {
         this.showLabelInList = showLabelInList;
         setLabelText(text);
         addLabelToList();
+    }
+
+    private void addLabelToList() {
+        if (showLabelInList) {
+            adapterLayout.addItem(0, DefaultItemSpinnerLayout.createInstance(getInputLabel()));
+        }
     }
 
     public <T extends SpinnerAdapterLayout> void setAdapterLayout(T adapterLayout) {
@@ -111,13 +117,11 @@ public class SpinnerLayout extends PickerInputLayout {
      **/
     public void setItems(List<ItemSpinnerLayout> items) {
         adapterLayout.setItems(items);
-        addLabelToList();
         adapterLayout.refresh();
     }
 
     public void addItems(List<ItemSpinnerLayout> items) {
         adapterLayout.addItems(items);
-        addLabelToList();
         adapterLayout.refresh();
     }
 
@@ -131,12 +135,6 @@ public class SpinnerLayout extends PickerInputLayout {
                 position = 1;
             }
             setInputText(adapterLayout.getItem(position).getLabel());
-        }
-    }
-
-    private void addLabelToList() {
-        if (showLabelInList) {
-            adapterLayout.addItem(0, DefaultItemSpinnerLayout.createInstance(getInputLabel()));
         }
     }
 }

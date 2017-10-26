@@ -24,7 +24,7 @@ public class EditLayout extends InputView<AppCompatEditText> {
 
     @Override
     public void attachInputLayout() {
-        ViewGroup viewGroup = (ViewGroup) inflate(getContext(), R.layout.view_input_edit, viewWrapperInput);
+        ViewGroup viewGroup = (ViewGroup) inflate(getContext(), R.layout.view_input_layout_form_input_edit, viewWrapperInput);
         editText = (AppCompatEditText) viewGroup.getChildAt(0);
     }
 

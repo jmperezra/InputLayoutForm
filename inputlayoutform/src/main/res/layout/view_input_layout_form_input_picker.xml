@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pickerText"
-    style="@style/InputView.Picker"
+    style="@style/InputLayoutForm_InputView.Picker"
     android:layout_width="match_parent"
     android:maxLines="1"
     android:layout_height="wrap_content"

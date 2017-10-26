@@ -3,7 +3,7 @@
 
     <item
         android:state_selected="true"
-        android:drawable="@color/item_spinner_pressed_color"/>
+        android:drawable="@color/input_layout_form_item_spinner_pressed_color"/>
 
-    <item android:drawable="@color/item_spinner_default_color" />
+    <item android:drawable="@color/input_layout_form_item_spinner_default_color" />
 </selector>

@@ -43,7 +43,7 @@ public abstract class PickerInputLayout extends InputView<AppCompatTextView> {
 
     @Override
     public void attachInputLayout() {
-        ViewGroup viewGroup = (ViewGroup) inflate(getContext(), R.layout.view_input_picker, viewWrapperInput);
+        ViewGroup viewGroup = (ViewGroup) inflate(getContext(), R.layout.view_input_layout_form_input_picker, viewWrapperInput);
         textView = (AppCompatTextView) viewGroup.getChildAt(0);
     }
 

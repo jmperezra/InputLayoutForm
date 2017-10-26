@@ -60,7 +60,7 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     }
 
     private void inflateView(){
-        this.layoutInflated = (ViewGroup) inflate(getContext(), R.layout.view_input_layout, this);
+        this.layoutInflated = (ViewGroup) inflate(getContext(), R.layout.view_input_layout_form_input_layout, this);
     }
 
     private void findViews(){
@@ -71,7 +71,7 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
 
     private void setAttrsValues(){
         if (attrs != null){
-            TypedArray typedArray = getTypedArray(R.styleable.InputLayoutStyleable);
+            TypedArray typedArray = getTypedArray(R.styleable.InputLayoutFormStyleable);
             try {
                 setLabelFromAttrs(typedArray);
                 setInputFromAttrs(typedArray);
@@ -96,20 +96,20 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     }
 
     private void setLabelTextFromAttrs(TypedArray typedArray){
-        if (typedArray.hasValue(R.styleable.InputLayoutStyleable_inputLabelText)){
-            setLabelText(typedArray.getText(R.styleable.InputLayoutStyleable_inputLabelText));
+        if (typedArray.hasValue(R.styleable.InputLayoutFormStyleable_inputLabelText)){
+            setLabelText(typedArray.getText(R.styleable.InputLayoutFormStyleable_inputLabelText));
         }
     }
 
     private void setLabelTextColorFromAttrs(TypedArray typedArray){
-        if (typedArray.hasValue(R.styleable.InputLayoutStyleable_inputLabelTextColor)){
-            setLabelTextColor(typedArray.getColor(R.styleable.InputLayoutStyleable_inputLabelTextColor, Color.GRAY));
+        if (typedArray.hasValue(R.styleable.InputLayoutFormStyleable_inputLabelTextColor)){
+            setLabelTextColor(typedArray.getColor(R.styleable.InputLayoutFormStyleable_inputLabelTextColor, Color.GRAY));
         }
     }
 
     private void setLabelTextSizeFromAttrs(TypedArray typedArray){
-        if (typedArray.hasValue(R.styleable.InputLayoutStyleable_inputLabelTextSize)){
-            setLabelTextSize(typedArray.getDimension(R.styleable.InputLayoutStyleable_inputLabelTextSize, 12));
+        if (typedArray.hasValue(R.styleable.InputLayoutFormStyleable_inputLabelTextSize)){
+            setLabelTextSize(typedArray.getDimension(R.styleable.InputLayoutFormStyleable_inputLabelTextSize, 12));
         }
     }
 
@@ -120,21 +120,21 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     }
 
     private void setInputTextFromAttrs(TypedArray typedArray){
-        if (typedArray.hasValue(R.styleable.InputLayoutStyleable_inputLayoutText)){
-            setInputText(typedArray.getText(R.styleable.InputLayoutStyleable_inputLayoutText));
+        if (typedArray.hasValue(R.styleable.InputLayoutFormStyleable_inputLayoutText)){
+            setInputText(typedArray.getText(R.styleable.InputLayoutFormStyleable_inputLayoutText));
             setFocusAtEndOfText();
         }
     }
 
     private void setInputTextColorFromAttrs(TypedArray typedArray){
-        if (typedArray.hasValue(R.styleable.InputLayoutStyleable_inputLayoutTextColor)){
-            setInputTextColor(typedArray.getColor(R.styleable.InputLayoutStyleable_inputLayoutTextColor, Color.BLACK));
+        if (typedArray.hasValue(R.styleable.InputLayoutFormStyleable_inputLayoutTextColor)){
+            setInputTextColor(typedArray.getColor(R.styleable.InputLayoutFormStyleable_inputLayoutTextColor, Color.BLACK));
         }
     }
 
     private void setInputTextSizeFromAttrs(TypedArray typedArray){
-        if (typedArray.hasValue(R.styleable.InputLayoutStyleable_inputLayoutTextSize)){
-            setInputTextSize(typedArray.getDimension(R.styleable.InputLayoutStyleable_inputLayoutTextSize,  14));
+        if (typedArray.hasValue(R.styleable.InputLayoutFormStyleable_inputLayoutTextSize)){
+            setInputTextSize(typedArray.getDimension(R.styleable.InputLayoutFormStyleable_inputLayoutTextSize,  14));
         }
     }
 
@@ -152,20 +152,20 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     }
 
     private void setInfoTextFromAttrs(TypedArray typedArray){
-        if (typedArray.hasValue(R.styleable.InputLayoutStyleable_inputInfoText)){
-            setInfoText(typedArray.getText(R.styleable.InputLayoutStyleable_inputInfoText));
+        if (typedArray.hasValue(R.styleable.InputLayoutFormStyleable_inputInfoText)){
+            setInfoText(typedArray.getText(R.styleable.InputLayoutFormStyleable_inputInfoText));
         }
     }
 
     private void setInfoTextColorFromAttrs(TypedArray typedArray){
-        if (typedArray.hasValue(R.styleable.InputLayoutStyleable_inputInfoTextColor)){
-            setInfoTextColor(typedArray.getColor(R.styleable.InputLayoutStyleable_inputInfoTextColor, Color.GRAY));
+        if (typedArray.hasValue(R.styleable.InputLayoutFormStyleable_inputInfoTextColor)){
+            setInfoTextColor(typedArray.getColor(R.styleable.InputLayoutFormStyleable_inputInfoTextColor, Color.GRAY));
         }
     }
 
     private void setInfoTextSizeFromAttrs(TypedArray typedArray){
-        if (typedArray.hasValue(R.styleable.InputLayoutStyleable_inputInfoTextSize)){
-            setInfoTextSize(typedArray.getDimension(R.styleable.InputLayoutStyleable_inputInfoTextSize, 12));
+        if (typedArray.hasValue(R.styleable.InputLayoutFormStyleable_inputInfoTextSize)){
+            setInfoTextSize(typedArray.getDimension(R.styleable.InputLayoutFormStyleable_inputInfoTextSize, 12));
         }
     }
 
