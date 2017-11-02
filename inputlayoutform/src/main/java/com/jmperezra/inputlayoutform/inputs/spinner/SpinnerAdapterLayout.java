@@ -95,4 +95,12 @@ public class SpinnerAdapterLayout extends BaseAdapter {
     private View inflateView(){
         return View.inflate(context, R.layout.view_input_layout_form_spinner_item, null);
     }
+
+    public ItemSpinnerLayout getItemSelected(){
+        if (positionSelected >= 0 && positionSelected < items.size()){
+            return items.get(positionSelected);
+        }else{
+            return items.get(0);
+        }
+    }
 }

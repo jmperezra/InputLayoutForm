@@ -176,7 +176,7 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     }
 
     @Override
-    public void obtainValues() {
+    public void updateValues() {
         viewLabel.setText(viewLabel.getText());
         viewInfo.setText(viewInfo.getText());
     }
@@ -301,4 +301,6 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     public String getInputLabel(){
         return viewLabel.getText().toString();
     }
+
+    public abstract CharSequence getText();
 }

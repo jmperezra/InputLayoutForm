@@ -37,4 +37,9 @@ public class EditLayout extends InputView<AppCompatEditText> {
     public void setInputHint(CharSequence hint) {
         editText.setHint(hint);
     }
+
+    @Override
+    public CharSequence getText(){
+        return editText.getText();
+    }
 }

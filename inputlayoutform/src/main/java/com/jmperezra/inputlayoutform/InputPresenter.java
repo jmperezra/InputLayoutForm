@@ -19,7 +19,7 @@ public class InputPresenter {
     }
 
     private void viewAttached(){
-        view.obtainValues();
+        view.updateValues();
         view.hideLabelText();
         view.setupFocusEvent();
         view.setupTextChangedEvent();

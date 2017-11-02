@@ -3,7 +3,7 @@ package com.jmperezra.inputlayoutform;
 
 public interface InputLayoutView {
 
-    void obtainValues();
+    void updateValues();
 
     void showInfoText();
     void hideInfoText();

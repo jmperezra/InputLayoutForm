@@ -53,4 +53,9 @@ public abstract class PickerInputLayout extends InputView<AppCompatTextView> {
     }
 
     public abstract void pickerClicked();
+
+    @Override
+    public CharSequence getText(){
+        return textView.getText();
+    }
 }

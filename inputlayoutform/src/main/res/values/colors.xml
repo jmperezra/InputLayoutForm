@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="input_layout_form_item_spinner_pressed_color">#9f0000</color>
+    <color name="input_layout_form_item_spinner_pressed_color">#dedede</color>
     <color name="input_layout_form_item_spinner_default_color">#00FFFFFF</color>
 </resources>

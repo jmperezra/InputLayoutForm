@@ -134,7 +134,12 @@ public class SpinnerLayout extends PickerInputLayout {
             if (showLabelInList && position == 0) {
                 position = 1;
             }
+            adapterLayout.setPositionSelected(position);
             setInputText(adapterLayout.getItem(position).getLabel());
         }
+    }
+
+    public ItemSpinnerLayout getItemSelected(){
+        return adapterLayout.getItemSelected();
     }
 }
