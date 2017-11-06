@@ -36,6 +36,12 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     protected abstract void attachInputLayout();
     protected abstract T getViewInput();
 
+    private InputListener inputListener;
+
+    public interface InputListener{
+        void onFocusChanged(boolean hasFocus);
+    }
+
     public InputView(Context context) {
         this(context, null);
     }
@@ -270,6 +276,9 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 presenter.changeFocus(hasFocus);
+                if (inputListener != null){
+                    inputListener.onFocusChanged(hasFocus);
+                }
             }
         };
     }
@@ -303,4 +312,8 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
     }
 
     public abstract CharSequence getText();
+
+    public void setInputListener(InputListener inputListener) {
+        this.inputListener = inputListener;
+    }
 }
