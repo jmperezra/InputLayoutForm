@@ -289,6 +289,11 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
         getViewInput().addTextChangedListener(getTextWatcher());
     }
 
+    public void addTextChangedListener(TextWatcher textWatcher){
+        getViewInput().addTextChangedListener(textWatcher);
+    }
+
+
     private TextWatcher getTextWatcher(){
         return new TextWatcher() {
             @Override
