@@ -40,6 +40,7 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
 
     public interface InputListener{
         void onFocusChanged(boolean hasFocus);
+        void onTextChanged(CharSequence charSequence);
     }
 
     public InputView(Context context) {
