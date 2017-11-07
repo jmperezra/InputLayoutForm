@@ -299,6 +299,9 @@ public abstract class InputView<T extends TextView> extends LinearLayout impleme
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 presenter.setInputText(charSequence);
+                if (inputListener != null){
+                    inputListener.onTextChanged(charSequence);
+                }
             }
 
             @Override
